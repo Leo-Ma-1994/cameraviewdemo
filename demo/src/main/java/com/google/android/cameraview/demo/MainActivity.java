@@ -59,6 +59,7 @@ import java.util.Set;
 public class MainActivity extends AppCompatActivity implements
         ActivityCompat.OnRequestPermissionsResultCallback,
         AspectRatioFragment.Listener {
+    //Tag
 
     private static final String TAG = "MainActivity";
 
