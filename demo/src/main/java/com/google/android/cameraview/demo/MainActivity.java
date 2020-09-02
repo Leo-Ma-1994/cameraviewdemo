@@ -50,6 +50,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Set;
+import java.util.function.ToDoubleBiFunction;
 
 
 /**
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements
 
     private static final String FRAGMENT_DIALOG = "dialog";
 
+    //闪关灯相关
     private static final int[] FLASH_OPTIONS = {
             CameraView.FLASH_AUTO,
             CameraView.FLASH_OFF,
@@ -89,6 +91,7 @@ public class MainActivity extends AppCompatActivity implements
 
     private CameraView mCameraView;
 
+    //TODO :待了解
     private Handler mBackgroundHandler;
 
     private View.OnClickListener mOnClickListener = new View.OnClickListener() {
@@ -107,9 +110,11 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //初始化界面
         setContentView(R.layout.activity_main);
         mCameraView = findViewById(R.id.camera);
         if (mCameraView != null) {
+            //TODO
             mCameraView.addCallback(mCallback);
         }
         FloatingActionButton fab = findViewById(R.id.take_picture);
@@ -124,6 +129,9 @@ public class MainActivity extends AppCompatActivity implements
         }
     }
 
+    /**
+     * 申请权限相关代码
+     */
     @Override
     protected void onResume() {
         super.onResume();
